@@ -215,4 +215,4 @@ else
 	fi
 fi
 
-echo "$res"
+res=$(echo $res | cut -d- -f1-2)-OP-Wild;echo "$res";

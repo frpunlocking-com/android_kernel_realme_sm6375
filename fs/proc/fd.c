@@ -16,13 +16,23 @@
 #include "../mount.h"
 #include "internal.h"
 #include "fd.h"
+#ifndef TASK_STRUCT_NON_ROOT_USER_APP_PROC
+#define TASK_STRUCT_NON_ROOT_USER_APP_PROC 0ULL
+#endif
 
+#ifndef DEFAULT_SUS_MNT_ID
+#define DEFAULT_SUS_MNT_ID 0ULL
+#endif
 static int seq_show(struct seq_file *m, void *v)
 {
 	struct files_struct *files = NULL;
 	int f_flags = 0, ret = -ENOENT;
 	struct file *file = NULL;
 	struct task_struct *task;
+#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
+	struct mount *mnt = NULL;
+	(void)mnt;
+#endif
 
 	task = get_proc_task(m->private);
 	if (!task)
@@ -53,10 +63,58 @@ static int seq_show(struct seq_file *m, void *v)
 	if (ret)
 		return ret;
 
-	seq_printf(m, "pos:\t%lli\nflags:\t0%o\nmnt_id:\t%i\n",
-		   (long long)file->f_pos, f_flags,
-		   real_mount(file->f_path.mnt)->mnt_id);
 
+		   #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
+		   	mnt = real_mount(file->f_path.mnt);
+		   	if (likely(current->susfs_task_state & TASK_STRUCT_NON_ROOT_USER_APP_PROC) &&
+		   			mnt->mnt_id >= DEFAULT_SUS_MNT_ID) {
+		   		struct path path;
+		   		char *pathname = kmalloc(PAGE_SIZE, GFP_KERNEL);
+		   		char *dpath;
+		   
+		   		for (; mnt->mnt_id >= DEFAULT_SUS_MNT_ID; mnt = mnt->mnt_parent) { }
+		   
+		   
+		   		if (!pathname) {
+		   			goto out_seq_printf;
+		   		}
+		   		dpath = d_path(&file->f_path, pathname, PAGE_SIZE);
+		   		if (!dpath) {
+		   			goto out_free_pathname;
+		   		}
+		   		if (kern_path(dpath, 0, &path)) {
+		   			goto out_free_pathname;
+		   		}
+		   		seq_printf(m, "pos:\t%lli\nflags:\t0%o\nmnt_id:\t%i\nino:\t%lu\n",
+		   				(long long)file->f_pos, f_flags,
+		   				mnt->mnt_id,
+		   				path.dentry->d_inode->i_ino);
+		   		path_put(&path);
+		   		kfree(pathname);
+		   		goto bypass_orig_flow;
+				out_free_pathname:
+				   kfree(pathname);
+			}
+			goto bypass_orig_flow;
+		   	seq_printf(m, "pos:\t%lli\nflags:\t0%o\nmnt_id:\t%i\nino:\t%lu\n",
+		   		   (long long)file->f_pos, f_flags,
+		   		   mnt->mnt_id,
+		   		   file_inode(file)->i_ino);
+		   #else
+				seq_printf(m, "pos:\t%lli\nflags:\t0%o\nmnt_id:\t%i\nino:\t%lu\n",
+					   (long long)file->f_pos, f_flags,
+					   real_mount(file->f_path.mnt)->mnt_id,
+					   file_inode(file)->i_ino);
+		   #endif
+
+out_seq_printf:
+	seq_printf(m, "0\n");  /* safe default */
+	return 0;
+bypass_orig_flow:
+	return 0;
+out:
+	fput(file);
+	return 0;
 	show_fd_locks(m, file, files);
 	if (seq_has_overflowed(m))
 		goto out;
@@ -64,9 +122,6 @@ static int seq_show(struct seq_file *m, void *v)
 	if (file->f_op->show_fdinfo)
 		file->f_op->show_fdinfo(m, file);
 
-out:
-	fput(file);
-	return 0;
 }
 
 static int seq_fdinfo_open(struct inode *inode, struct file *file)
