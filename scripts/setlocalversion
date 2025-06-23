@@ -215,4 +215,4 @@ else
 	fi
 fi
 
-res=$(echo $res | cut -d- -f1-2)-OP-Wild;echo "$res";
+echo "-qgki-gc916795b189b"
