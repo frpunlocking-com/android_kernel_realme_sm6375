@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: GPL-2.0
 VERSION = 5
 PATCHLEVEL = 4
-SUBLEVEL = 254 ## real source is 292, spoofing RMX3661 F.24
-EXTRAVERSION = 
+SUBLEVEL = 254 #spoffing of Realme RMX3661, real is .292
+EXTRAVERSION =
 NAME = Kleptomaniac Octopus
 
 # indicate that change "Kbuild: Support nested composite objects" is
@@ -1317,7 +1317,7 @@ $(sort $(vmlinux-deps)): descend ;
 
 filechk_kernel.release = \
 	echo "$(KERNELVERSION)$$($(CONFIG_SHELL) $(srctree)/scripts/setlocalversion \
-		$(srctree) android12 0)"
+		$(srctree) $(BRANCH) $(KMI_GENERATION))"
 
 # Store (new) KERNELRELEASE string in include/config/kernel.release
 include/config/kernel.release: FORCE
