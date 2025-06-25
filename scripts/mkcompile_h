@@ -71,6 +71,6 @@ echo "#define UTS_MACHINE \"arm64\"";
 echo "#define UTS_VERSION \"#1 SMP PREEMPT Fri Apr 18 11:04:11 CST 2025\"";
 echo "#define LINUX_COMPILE_BY \"root\"";
 echo "#define LINUX_COMPILE_HOST \"kvm-slave-build-s-vendor-04946496\"";
-  printf '#define LINUX_COMPILER "%s"\n' "$CC_VERSION, $LD_VERSION";
+echo "#define LINUX_COMPILER \"(Android (6877366 based on r383902b1) clang version 11.0.2 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79), LLD 11.0.2 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79))\"";
 } > .tmpcompile
 mv -f .tmpcompile $TARGET

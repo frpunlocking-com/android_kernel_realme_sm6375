@@ -2,8 +2,8 @@
 VERSION = 5
 PATCHLEVEL = 4
 SUBLEVEL = 254 #spoffing of Realme RMX3661, real is .292
-EXTRAVERSION =
-NAME = Kleptomaniac Octopus
+EXTRAVERSION = "qgki-gc916795b189b"
+
 
 # indicate that change "Kbuild: Support nested composite objects" is
 # present in the kernel so that out-of-tree modules can act upon it
@@ -345,7 +345,11 @@ include scripts/Kbuild.include
 
 # Read KERNELRELEASE from include/config/kernel.release (if it exists)
 KERNELRELEASE = $(shell cat include/config/kernel.release 2> /dev/null)
+$(eval KERNELRELEASE := $(shell echo $(KERNELRELEASE) | tr ' ' '-'))
+
 KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(SUBLEVEL)))$(EXTRAVERSION)
+$(eval KERNELVERSION := $(shell echo $(KERNELVERSION) | tr ' ' '-'))
+
 export VERSION PATCHLEVEL SUBLEVEL KERNELRELEASE KERNELVERSION
 
 include scripts/subarch.include
