@@ -59,6 +59,22 @@ Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.or
 
 No issues have been reported so far, but if any problems arise, please report them in the official thread on XDA or create a GitHub issue with a detailed description of the situation and attach screenshots or videos from the detectors.
 
+## Data Insights for Tech Enthusiasts
+
+The development of this kernel modification was primarily driven by Google's ongoing attempts to block rooted devices via Play Integrity API checks - an action that we, as developers and researchers, strongly oppose. Root access is essential for thorough security research, and its restriction undermines transparency and the right to repair. This custom kernel was carefully crafted to bypass these limitations, integrating KernelSU and SuSFS into an older 5.4 LineageOS kernel.
+
+These kernel modifications are part of an academic project related to my master's thesis on the security analysis of consumer electronics at the Military University. Modifying a legacy Chinese-modified Realme 10 Pro kernel was quite a challenge - imagine trying to assemble IKEA furniture without any instructions, missing half the screws, and using pieces meant for a completely different set. Yes, it was precisely that entertaining.
+
+| LOC Metric                 | Lines of Code (LOC) |
+|----------------------------|--------------------:|
+| Total (A + R + C)          | ~25.2k              |
+| Added (A)                  | ~13.4k              |
+| Removed (R)                | ~5.1k               |
+| Changed (C)                | ~6.7k               |
+| Unique LOC (`*.rej` files) | ~2.3k               |
+
+**Note:** `.orig` and `.rej` files are intentionally preserved within the repository as references. They document the manual interventions required when automatic patching failed—particularly valuable for other developers wrestling with similarly aged Chinese kernels (such as those based on QGKI) on Realme and Oppo devices.
+
 ## Credits & Resources
 
 - KernelSU & KernelSU Next.
