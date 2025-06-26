@@ -48,7 +48,7 @@ After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](htt
 
 ## Known Issues
 
- No issues reported so far, but please report in the official thread.
+No issues have been reported so far, but if any problems arise, please report them in the official thread on XDA or create a GitHub issue with a detailed description of the situation and attach screenshots or videos from the detectors.
 
 ## Credits & Resources
 
