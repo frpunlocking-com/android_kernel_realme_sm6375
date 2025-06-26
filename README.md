@@ -15,6 +15,11 @@ Device:
 
 ## Installation Steps
 
+Tested with:
+
+- [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
+- [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
+
 If you don't have [LineageOS recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img), flash it by:
 
 ```
@@ -33,11 +38,6 @@ fastboot reboot
 ```
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip).
-
-Tested with:
-
-- [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
-- [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
 
 Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
 
