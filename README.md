@@ -65,7 +65,7 @@ The development of this kernel modification was primarily driven by Google's ong
 
 These kernel modifications are part of an academic project related to my master's thesis on the security analysis of consumer electronics at the Military University. Modifying a legacy Chinese-modified Realme 10 Pro kernel was quite a challenge - imagine trying to assemble IKEA furniture without any instructions, missing half the screws, and using pieces meant for a completely different set. Yes, it was precisely that entertaining.
 
-| LOC Metric                 | Lines of Code (LOC) |
+| LOC Metric v1                 | Lines of Code (LOC) |
 |----------------------------|--------------------:|
 | Total (A + R + C)          | ~25.2k              |
 | Added (A)                  | ~13.4k              |
