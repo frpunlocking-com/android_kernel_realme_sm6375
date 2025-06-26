@@ -22,7 +22,7 @@ fastboot flash vendor_boot vendor_boot.img
 fastboot reboot recovery
 ```
 
-After flashing LineageOS and/or MindTheGApps, boot into recovery fastboot (preffered)/fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases) by:
+After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (preffered) or factory fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases) by:
 
 ```
 fastboot flash boot_a boot.img
