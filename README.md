@@ -53,7 +53,7 @@ Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.or
 
 - Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
 - No bootloops or data errors in testing on real device as of 2025‑06‑21.
-- Root access is maintained across reboots.
+- Spoofing RMX3661 factory Android 15 Realme UI 6.0 fingerprint.
 
 ## Known Issues
 
