@@ -1,3 +1,92 @@
+# Realme 10 Pro LineageOS KSUN + SuSFS kernel with spoofing
+
+- KSUN Nightly is roote solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
+- All features, except OverlaysFS Auto Kstat Support on SuSFS, proceed into an invisible root experience for all apps, including Revolut, bank, ChatGPT, goverment apps etc.
+- Custom-modified boot, dtbo, kernel images, and source code on every release.
+- Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
+
+## Installation Steps
+
+If you don't have LineageOS recovery, flash it by:
+
+```
+fastboot flash vendor_boot vendor_boot.img
+fastboot reboot recovery
+```
+
+After flashing LineageOS and/or MindTheGApps, boot into recovery/fastboot and run:
+
+```
+fastboot flash boot_a boot.img
+fastboot flash dtbo_a dtbo.img
+fastboot flash boot_b boot.img 
+fastboot flash dtbo_b dtbo.img
+fastboot reboot
+```
+
+After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager/next/manager.zip)
+
+## Kernel Highlights
+
+- Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
+- KernelSU v12716 - latest version providing root access.
+- SuSFS v1.5.5 - Android dynamic rootfs support.
+
+## Enhancements & Fixes
+
+- Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
+- No bootloops or data errors in testing on real device as of 2025‑06‑21.
+- Root access is maintained across reboots.
+
+## Known Issues
+
+ No issues reported so far, but please report in the official thread.
+
+## Credits & Resources
+
+- KernelSU & KernelSU Next.
+- SuSFS, susfs4ksu, and Wild Kernels.
+- Big thanks to the Realme 10 Pro device maintainers and devs on LineageOS, testers, and the MindTheGapps maintainers and devs.
+
+## Realme 10 Pro 
+- codename: luigi
+- IDs: 
+  - RMX3660,
+  - RMX3661,
+  - RMX3663.
+
+Tested with:
+
+- [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250607/lineage-22.2-20250607-nightly-luigi-signed.zip) 
+- [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
+
+Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
+
+Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img) (via Fastboot boot partition reflash).
+
+```
+
+#include <std_disclaimer.h>
+/*
+* Your warranty is... Still valid??
+*
+* I am not responsible if you brick your device,
+* dead SD card, installed viruses, burned battery
+* and thermonuclear war, or you getting fired
+* because the alarm app failed. Please do
+* some research if you have any concerns
+* about features included in this software
+* before flashing it! You are choosing to
+* make these strong modifications on your
+* device, and if you point the finger at me
+* for messing up your device,
+* I will laugh at you.
+* LICENSE.md
+* Our modifications are GPLv2 licensed.
+*/
+
+```
+
 # How do I submit patches to Android Common Kernels
 
 1. BEST: Make all of your changes to upstream Linux. If appropriate, backport to the stable releases.
