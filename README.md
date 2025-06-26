@@ -5,6 +5,12 @@
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
 - Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
+- codename: luigi
+- IDs: 
+  - RMX3660,
+  - RMX3661,
+  - RMX3663.
+
 ## Installation Steps
 
 If you don't have LineageOS recovery, flash it by:
@@ -47,13 +53,6 @@ After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](htt
 - KernelSU & KernelSU Next.
 - SuSFS, susfs4ksu, and Wild Kernels.
 - Big thanks to the Realme 10 Pro device maintainers and devs on LineageOS, testers, and the MindTheGapps maintainers and devs.
-
-## Realme 10 Pro 
-- codename: luigi
-- IDs: 
-  - RMX3660,
-  - RMX3661,
-  - RMX3663.
 
 Tested with:
 
