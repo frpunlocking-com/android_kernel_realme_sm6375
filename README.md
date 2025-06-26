@@ -22,7 +22,7 @@ fastboot flash vendor_boot vendor_boot.img
 fastboot reboot recovery
 ```
 
-After flashing LineageOS and/or MindTheGApps, boot into recovery/fastboot and run:
+After flashing LineageOS and/or MindTheGApps, boot into recovery fastboot (preffered)/fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases) by:
 
 ```
 fastboot flash boot_a boot.img
@@ -36,7 +36,7 @@ After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](htt
 
 Tested with:
 
-- [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250607/lineage-22.2-20250614-nightly-luigi-signed.zip) 
+- [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
 
 Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
