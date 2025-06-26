@@ -15,7 +15,7 @@ Device:
 
 ## Installation Steps
 
-If you don't have LineageOS recovery, flash it by:
+If you don't have [LineageOS recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img), flash it by:
 
 ```
 fastboot flash vendor_boot vendor_boot.img
