@@ -24,7 +24,7 @@ fastboot flash dtbo_b dtbo.img
 fastboot reboot
 ```
 
-After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager/next/manager.zip)
+After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip).
 
 ## Kernel Highlights
 
