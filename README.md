@@ -63,7 +63,7 @@ No issues have been reported so far, but if any problems arise, please report th
 
 The development of this kernel modification was primarily driven by Google's ongoing attempts to block rooted devices via Play Integrity API checks - an action that we, as developers and researchers, strongly oppose. Root access is essential for thorough security research, and its restriction undermines transparency and the right to repair. This custom kernel was carefully crafted to bypass these limitations, integrating KernelSU and SuSFS into an older 5.4 LineageOS kernel.
 
-These kernel modifications are part of an academic project related to my master's thesis on the security analysis of consumer electronics at the Military University. Modifying a legacy Chinese-modified Realme 10 Pro kernel was quite a challenge - imagine trying to assemble IKEA furniture without any instructions, missing half the screws, and using pieces meant for a completely different set. Yes, it was precisely that entertaining.
+These kernel modifications are part of an academic project related to my master's thesis on the security analysis of consumer electronics at the military university. Modifying a legacy Chinese-modified Realme 10 Pro kernel was quite a challenge - imagine trying to assemble IKEA furniture without any instructions, missing half the screws, and using pieces meant for a completely different set. Yes, it was precisely that entertaining.
 
 | LOC Metric v1                 | Lines of Code (LOC) |
 |----------------------------|--------------------:|
