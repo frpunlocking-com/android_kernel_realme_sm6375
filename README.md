@@ -73,7 +73,7 @@ These kernel modifications are part of an academic project related to my master'
 | Changed (C)                | ~6.7k               |
 | Unique LOC (`*.rej` files) | ~2.3k               |
 
-**Note:** `.orig` and `.rej` files are intentionally preserved within the repository as references. They document the manual interventions required when automatic patching failed—particularly valuable for other developers wrestling with similarly aged Chinese kernels (such as those based on QGKI) on Realme and Oppo devices.
+**Note:** `.orig` and `.rej` files are intentionally preserved within the repository as references. They document the manual interventions required when automatic patching failed - particularly valuable for other developers wrestling with similarly aged Chinese kernels (such as those based on QGKI) on Realme and Oppo devices.
 
 ## Credits & Resources
 
