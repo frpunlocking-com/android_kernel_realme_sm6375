@@ -5,6 +5,8 @@
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
 - Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
+Device:
+
 - codename: luigi
 - IDs: 
   - RMX3660,
