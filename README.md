@@ -34,6 +34,15 @@ fastboot reboot
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip).
 
+Tested with:
+
+- [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250607/lineage-22.2-20250607-nightly-luigi-signed.zip) 
+- [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
+
+Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
+
+Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img) (via Fastboot boot partition reflash).
+
 ## Kernel Highlights
 
 - Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
@@ -55,15 +64,6 @@ No issues have been reported so far, but if any problems arise, please report th
 - KernelSU & KernelSU Next.
 - SuSFS, susfs4ksu, and Wild Kernels.
 - Big thanks to the Realme 10 Pro device maintainers and devs on LineageOS, testers, and the MindTheGapps maintainers and devs.
-
-Tested with:
-
-- [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250607/lineage-22.2-20250607-nightly-luigi-signed.zip) 
-- [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
-
-Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
-
-Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img) (via Fastboot boot partition reflash).
 
 ```
 
