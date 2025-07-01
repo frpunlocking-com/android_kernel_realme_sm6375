@@ -22,7 +22,6 @@ extern bool susfs_is_current_ksu_domain(void);
 #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
 extern void ksu_try_umount(const char *mnt, bool check_mnt, int flags, uid_t uid);
 #endif
-extern bool susfs_is_sus_su_hooks_enabled __read_mostly;
 
 #ifdef CONFIG_KSU_SUSFS_ENABLE_LOG
 bool susfs_is_log_enabled __read_mostly = true;
@@ -844,6 +843,7 @@ struct filename* susfs_get_redirected_path(unsigned long ino) {
 
 /* sus_su */
 #ifdef CONFIG_KSU_SUSFS_SUS_SU
+bool susfs_is_sus_su_hooks_enabled __read_mostly = false;
 static int susfs_sus_su_working_mode = 0;
 extern void ksu_susfs_enable_sus_su(void);
 extern void ksu_susfs_disable_sus_su(void);

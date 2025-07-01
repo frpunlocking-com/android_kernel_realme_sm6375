@@ -43,3 +43,9 @@ cc_library_headers {
     vendor: true,
     recovery_available: true,
 }
+genrule {
+    name: "link_kernel_modules_dir",
+    cmd: "ln -sf $(HOST_OUT)/obj/PACKAGING/kernel_modules_intermediates/lib/modules/$(KERNELRELEASE) " +
+         "$(HOST_OUT)/obj/PACKAGING/kernel_modules_intermediates/lib/modules/$(KERNELVERSION)",
+    out: ["modules_linked"],
+}

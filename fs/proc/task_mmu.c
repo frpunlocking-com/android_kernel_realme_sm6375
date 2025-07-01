@@ -372,6 +372,10 @@ static void show_vma_header_prefix_fake(struct seq_file *m,
 			MAJOR(dev), MINOR(dev), ino);
 }
 
+#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
+extern void susfs_sus_ino_for_show_map_vma(unsigned long ino, dev_t *out_dev, unsigned long *out_ino);
+#endif
+
 static void
 show_map_vma(struct seq_file *m, struct vm_area_struct *vma)
 {

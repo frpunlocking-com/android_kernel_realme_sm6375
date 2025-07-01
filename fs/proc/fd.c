@@ -12,6 +12,9 @@
 #include <linux/fs.h>
 
 #include <linux/proc_fs.h>
+#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
+#include <linux/susfs_def.h>
+#endif
 
 #include "../mount.h"
 #include "internal.h"
@@ -91,7 +94,6 @@ static int seq_show(struct seq_file *m, void *v)
 		   				path.dentry->d_inode->i_ino);
 		   		path_put(&path);
 		   		kfree(pathname);
-		   		goto bypass_orig_flow;
 				out_free_pathname:
 				   kfree(pathname);
 			}
@@ -106,12 +108,14 @@ static int seq_show(struct seq_file *m, void *v)
 					   real_mount(file->f_path.mnt)->mnt_id,
 					   file_inode(file)->i_ino);
 		   #endif
-
+#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
 out_seq_printf:
 	seq_printf(m, "0\n");  /* safe default */
 	return 0;
 bypass_orig_flow:
 	return 0;
+#endif
+
 out:
 	fput(file);
 	return 0;
