@@ -4,10 +4,6 @@ PATCHLEVEL = 4
 SUBLEVEL = 254 #spoffing of Realme RMX3661, real is .292
 EXTRAVERSION = "qgki-gc916795b189b"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> afb1bab7396bfe259287ad7874450fb23119b352
 # indicate that change "Kbuild: Support nested composite objects" is
 # present in the kernel so that out-of-tree modules can act upon it
 export KERNEL_SUPPORTS_NESTED_COMPOSITES := y
