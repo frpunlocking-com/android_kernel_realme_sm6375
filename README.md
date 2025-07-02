@@ -1,26 +1,43 @@
 # Realme sm6375 (10 Pro / 9 Pro) kernel from LineageOS added KSUN + SuSFS with factory spoofing
 
-- KSUN Nightly is root solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
+- Kertnel for sm6375 KSUN Nightly is root solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
 - All features, except OverlaysFS Auto Kstat Support on SuSFS, proceed into an invisible root experience for all apps, including Revolut, bank, ChatGPT, goverment apps etc.
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
-- Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
+- Not working Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
 Tested devices with Lineage:
 
 - Realme 10 Pro​
+  - SoC: sm6375, Snapdragon 695
   - codename: luigi
   - IDs:
     - RMX3660,
     - RMX3661,
     - RMX3663.
-  - On v2.x.x newest release based on KSUN v1.0.8 branch.
+  - On v2.x.x newest release based on KSUN `v1.0.8` branch.
 
 - Realme 9 Pro​
+  - SoC: sm6375, Snapdragon 695
   - codename: oscar
   - IDs:
     - RMX3471,
     - RMX3472.
-  - On v1.x.x in Github release based on KSUN Next branch.
+  - Confirmed by user on v1.x.x in Github release based on KSUN `Next` branch.
+
+Possible devices which can work with kernel and/or boot images
+
+- Realme 9 5G
+  - SoC: sm6375, Snapdragon 695
+  - codename: oscar
+  - IDs:
+    - RMX3474.
+  - Needs testers, please write in XDA or in DM on GitHub if work in any way.     
+ 
+- Realme Q5
+  - SoC: sm6375, Snapdragon 695
+  - codename: oscar
+    - IDs: RMX3478.
+  - Needs testers, please also write in XDA or in DM on GitHub if work in any way.     
 
 ## Installation Steps for luigi
 
