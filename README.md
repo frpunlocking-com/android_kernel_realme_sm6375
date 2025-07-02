@@ -14,7 +14,7 @@ Tested devices with Lineage:
     - RMX3660,
     - RMX3661,
     - RMX3663.
-  - On v2.x.x newest release based on KernelSU Next `v1.0.8` tag.
+  - On v2 newest release based on KernelSU Next `v1.0.8` tag.
 
 - Realme 9 Pro​
   - SoC: sm6375, Snapdragon 695
@@ -22,7 +22,7 @@ Tested devices with Lineage:
   - IDs:
     - RMX3471,
     - RMX3472.
-  - Confirmed by user on v1.x.x in Github release based on KernelSU Next `Next` feature branch, when you are using v2 give us feedback is it working on [post in XDA thread](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/).
+  - Confirmed by user on v1 in Github release based on KernelSU Next `Next` feature branch, when you are using v2 dedicated to oscar series give us feedback is it working on [post in XDA thread](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/).
 
 Possible devices which can work with kernel and/or boot images (v2)
 
