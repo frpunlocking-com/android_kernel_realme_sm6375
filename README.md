@@ -5,17 +5,26 @@
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
 - Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
-Device:
+Tested devices with Lineage:
 
-- codename: luigi
-- IDs: 
-  - RMX3660,
-  - RMX3661,
-  - RMX3663.
+- Realme 10 Pro​
+  - codename: luigi
+  - IDs:
+    - RMX3660,
+    - RMX3661,
+    - RMX3663.
+  - On v2.x.x newest release based on KSUN v1.0.8 branch.
+
+- Realme 9 Pro​
+  - codename: oscar
+  - IDs:
+    - RMX3471,
+    - RMX3472.
+  - On v1.x.x in Github release based on KSUN Next branch.
 
 ## Installation Steps
 
-Tested with:
+Tested on luigi:
 
 - [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
