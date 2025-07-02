@@ -22,7 +22,7 @@ Tested devices with Lineage:
     - RMX3472.
   - On v1.x.x in Github release based on KSUN Next branch.
 
-## Installation Steps
+## Installation Steps for luigi
 
 Tested on luigi:
 
