@@ -1,4 +1,4 @@
-# Realme 10 Pro LineageOS KSUN + SuSFS kernel with spoofing
+# Realme 10 Pro / 9 Pro LineageOS KSUN + SuSFS kernel with spoofing
 
 - KSUN Nightly is root solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
 - All features, except OverlaysFS Auto Kstat Support on SuSFS, proceed into an invisible root experience for all apps, including Revolut, bank, ChatGPT, goverment apps etc.
