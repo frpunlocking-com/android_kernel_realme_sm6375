@@ -14,7 +14,7 @@ Tested devices with Lineage:
     - RMX3660,
     - RMX3661,
     - RMX3663.
-  - On v2.x.x newest release based on KSUN `v1.0.8` branch.
+  - On v2.x.x newest release based on KernelSU Next `v1.0.8` tag.
 
 - Realme 9 Pro​
   - SoC: sm6375, Snapdragon 695
@@ -22,7 +22,7 @@ Tested devices with Lineage:
   - IDs:
     - RMX3471,
     - RMX3472.
-  - Confirmed by user on v1.x.x in Github release based on KSUN `Next` branch.
+  - Confirmed by user on v1.x.x in Github release based on KernelSU Next `Next` feature branch.
 
 Possible devices which can work with kernel and/or boot images
 
