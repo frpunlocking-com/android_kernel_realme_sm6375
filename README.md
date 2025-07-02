@@ -22,7 +22,7 @@ Tested devices with Lineage:
   - IDs:
     - RMX3471,
     - RMX3472.
-  - Confirmed by user on v1.x.x in Github release based on KernelSU Next `Next` feature branch, when you are using write IOssue which version is working or on XDA hread.
+  - Confirmed by user on v1.x.x in Github release based on KernelSU Next `Next` feature branch, when you are using write which version is working or on [post in XDA thread](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/).
 
 Possible devices which can work with kernel and/or boot images
 
@@ -31,13 +31,13 @@ Possible devices which can work with kernel and/or boot images
   - codename: oscar
   - IDs:
     - RMX3474.
-  - Needs testers, please write in XDA or in Issue on GitHub if work in any way.     
+  - Needs testers, please write [post in XDA](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/) or if work in any way.     
  
 - Realme Q5
   - SoC: sm6375, Snapdragon 695
   - codename: oscar
     - IDs: RMX3478.
-  - Needs testers, please also write in XDA or in Issue on GitHub if work in any way.     
+  - Needs testers, please also write [post in XDA](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/) or if work in any way.     
 
 ## Installation Steps for luigi
 
