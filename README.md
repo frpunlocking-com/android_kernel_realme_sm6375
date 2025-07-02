@@ -56,7 +56,7 @@ Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.or
 ## Kernel Highlights
 
 - Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
-- KernelSU v12716 - latest version providing root access.
+- KernelSU Next - latest version providing root access.
 - SuSFS v1.5.5 - Android dynamic rootfs support.
 
 ## Enhancements & Fixes
