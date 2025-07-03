@@ -41,7 +41,7 @@ Possible devices which can work with kernel and/or boot images (v2)
 
 ## Installation Steps for luigi/oscar
 
-Tested on 10 Pro:
+Tested on 10 Pro (luigi):
 
 - [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
