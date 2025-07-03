@@ -6,7 +6,7 @@ All notable changes to this project are documented in this file. Note: Pre-relea
 
 ### Added
 
-- Support for Realme 9 Pro 5G (codename "oscar") in addition to Realme 10 Pro 5G (codename "luigi").
+- Support for Realme: 9 Pro 5G / 9 5G / Q5 (codename "oscar") in addition to Realme 10 Pro 5G (codename "luigi").
 
 ### Fixed
 
