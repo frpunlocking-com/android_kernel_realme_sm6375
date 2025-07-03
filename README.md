@@ -66,9 +66,7 @@ fastboot reboot
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip).
 
-Confirmed safe for dirty flash on 2025‑06‑28 build, no data loss observed.
-
-Works seamlessly with MindTheGapps.
+Confirmed safe for dirty flash on 2025‑06‑28 build, no data loss observed. Works seamlessly with MindTheGapps.
 
 ## Kernel Highlights
 
