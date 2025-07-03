@@ -46,5 +46,4 @@ All notable changes to this project are documented in this file. Note: Pre-relea
 
 - Initial support for Realme 10 Pro 5G (codename "luigi").
 - KSUN Next in feature `Next` branch.
-- Integrated keybox by Tricky Store to pass Google Play Strong Integrity checks.
-- Suggested TSupport Advanced for Keybox.
+- Suggested TSupport Advanced for Keybox and Tricky Store / Addon to pass Google Play Strong Integrity checks.
