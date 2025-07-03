@@ -68,7 +68,7 @@ After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](htt
 
 ## Changelog
 
-All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately in the [CHNAGELOG.md](CHANGELOG.md)..
+All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately in the [CHANGELOG.md](CHANGELOG.md)..
 
 ### v2.0.0
 
