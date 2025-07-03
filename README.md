@@ -47,7 +47,7 @@ Tested on 10 Pro:
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
 - [lineage-22.2-20250628-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250628/lineage-22.2-20250628-nightly-luigi-signed.zip)
 
-If you don't have [LineageOS recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img), flash it by:
+If you don't have [LineageOS recovery](https://mirrorbits.lineageos.org/full/luigi/20250628/vendor_boot.img), flash it by:
 
 ```
 fastboot flash vendor_boot vendor_boot.img
@@ -66,9 +66,9 @@ fastboot reboot
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip).
 
-Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
+Confirmed safe for dirty flash on 2025‑06‑28 build, no data loss observed.
 
-Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img) (via Fastboot boot partition reflash).
+Works seamlessly with MindTheGapps.
 
 ## Kernel Highlights
 
