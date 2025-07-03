@@ -39,7 +39,7 @@ Possible devices which can work with kernel and/or boot images (v2)
     - IDs: RMX3478.
   - Needs testers, please also write [post in XDA](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/) if it is working in any way.     
 
-## Installation Steps for luigi
+## Installation Steps for luigi/oscar
 
 Tested on 10 Pro:
 
@@ -47,7 +47,7 @@ Tested on 10 Pro:
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
 - [lineage-22.2-20250628-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250628/lineage-22.2-20250628-nightly-luigi-signed.zip)
 
-If you don't have [LineageOS recovery](https://mirrorbits.lineageos.org/full/luigi/20250628/vendor_boot.img), flash it by:
+If you don't have LineageOS [recovery luigi](https://mirrorbits.lineageos.org/full/luigi/20250628/vendor_boot.img) or [recovery oscar](https://mirrorbits.lineageos.org/full/oscar/20250630/vendor_boot.img), flash it by:
 
 ```
 fastboot flash vendor_boot vendor_boot.img
