@@ -68,7 +68,7 @@ After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](htt
 
 ## Changelog
 
-All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately below.
+All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately in the [CHNAGELOG.md](CHANGELOG.md)..
 
 ### v2.0.0
 
@@ -97,8 +97,6 @@ All notable changes to this project are documented in this file. Note: Pre-relea
 
 - Bypassed native detection in system apps by injecting into the Zygote process using kprobes (now passes Native Detector v7.20 checks).
 - Fixed various device tree configuration issues in the build.
-
-More in [CHNAGELOG.md](CHANGELOG.md).
 
 ## Kernel Highlights
 
