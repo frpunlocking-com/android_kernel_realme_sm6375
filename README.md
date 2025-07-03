@@ -24,7 +24,9 @@
     - RMX3472.
   - Confirmed by user on v1 in release based on KernelSU Next `Next` feature branch, when you are using v2 dedicated boot/dtbo to oscar series give us feedback if it is working on [post in XDA](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/).
 
-Possible devices which can work with kernel and/or boot images (v2)
+### Possible supported devices 
+
+They can work with dtbo,boot images (in v2)
 
 - Realme 9 5G
   - SoC: sm6375, Snapdragon 695
