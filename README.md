@@ -66,6 +66,22 @@ fastboot reboot
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip). Confirmed safe for dirty flash on 2025-06-14 to 2025‑06‑28 build, no data loss observed. Works seamlessly with MindTheGapps.
 
+## Kernel Highlights
+
+- Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
+- KernelSU Next - latest version providing root access.
+- SuSFS v1.5.5 - Android dynamic rootfs support.
+
+## Enhancements & Fixes
+
+- Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
+- No bootloops or data errors in testing on real device as of 2025‑07‑02.
+- Spoofing RMX3661 factory Android 15 Realme UI 6.0 fingerprint.
+
+## Known Issues
+
+No issues have been reported so far, but if any problems arise, please report them in the official thread on XDA or create a GitHub issue with a detailed description of the situation and attach screenshots or videos from the detectors.
+
 ## Changelog
 
 All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately in the [CHANGELOG.md](CHANGELOG.md).
@@ -96,22 +112,6 @@ All notable changes to this project are documented in this file. Note: Pre-relea
 
 - Bypassed native detection in system apps by injecting into the Zygote process using kprobes (now passes Native Detector v7.20 checks).
 - Fixed various device tree configuration issues in the build.
-
-## Kernel Highlights
-
-- Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
-- KernelSU Next - latest version providing root access.
-- SuSFS v1.5.5 - Android dynamic rootfs support.
-
-## Enhancements & Fixes
-
-- Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
-- No bootloops or data errors in testing on real device as of 2025‑07‑02.
-- Spoofing RMX3661 factory Android 15 Realme UI 6.0 fingerprint.
-
-## Known Issues
-
-No issues have been reported so far, but if any problems arise, please report them in the official thread on XDA or create a GitHub issue with a detailed description of the situation and attach screenshots or videos from the detectors.
 
 ## Data Insights for Tech Enthusiasts
 
