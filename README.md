@@ -26,7 +26,7 @@
 
 ### Possible supported devices 
 
-They can work with dtbo,boot images (in v2)
+**Note:** They can work with boot images (in v2)
 
 - Realme 9 5G
   - SoC: sm6375, Snapdragon 695
