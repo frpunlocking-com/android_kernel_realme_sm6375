@@ -5,7 +5,7 @@
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
 - Not working Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
-Tested devices with Lineage:
+## Supported devices with LineageOS 22.2
 
 - Realme 10 Pro​
   - SoC: sm6375, Snapdragon 695
