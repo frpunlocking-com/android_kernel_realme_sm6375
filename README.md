@@ -1,6 +1,6 @@
 # Realme sm6375 (10 Pro / 9 Pro / 9 5G / Q5) kernel from LineageOS added KSUN + SuSFS with factory spoofing
 
-- Kertnel for sm6375 KSUN Nightly is root solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
+- Kertnel for sm6375 (fork) from LineageOS with KSUN Nightly is root solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
 - All features, except OverlaysFS Auto Kstat Support on SuSFS, proceed into an invisible root experience for all apps, including Revolut, bank, ChatGPT, goverment apps etc.
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
 - Not working Pixelify files (use a LSPosed module for unlimited GPhotos backup).
