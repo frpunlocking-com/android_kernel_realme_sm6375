@@ -86,7 +86,6 @@ All notable changes to this project are documented in this file. Note: Pre-relea
 
 #### Added
 
-- Initial support for Realme 10 Pro 5G (codename "luigi").
 - Included the [Yuri Keybox](https://github.com/dpejoh/yurikey/releases/) suggestion to enable passing Google Play Strong Integrity checks (with latest Play Services and Vending).
 
 #### Changed
