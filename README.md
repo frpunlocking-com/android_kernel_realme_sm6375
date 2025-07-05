@@ -5,7 +5,7 @@
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
 - Not working Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
-## Supported devices with LineageOS 22.2
+# Supported devices with LineageOS 22.2
 
 - Realme 10 Pro​
   - SoC: sm6375, Snapdragon 695
@@ -24,7 +24,7 @@
     - RMX3472.
   - On v2 newest release based on KernelSU Next `v1.0.8` tag.
 
-### Possible supported devices 
+## Possible supported devices 
 
 **Note:** They can work with boot images (in v2)
 
@@ -41,7 +41,7 @@
     - IDs: RMX3478.
   - Needs testers, please also write [post in XDA](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/) if it is working in any way.     
 
-## Installation Steps for luigi/oscar
+# Installation Steps for luigi/oscar
 
 Tested on 10 Pro (luigi):
 
@@ -68,54 +68,54 @@ fastboot reboot
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip). Confirmed safe for dirty flash on 2025-06-14 to 2025‑06‑28 build, no data loss observed. Works seamlessly with MindTheGapps.
 
-## Kernel Highlights
+# Kernel Highlights
 
 - Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
 - KernelSU Next - latest version providing root access.
 - SuSFS v1.5.5 - Android dynamic rootfs support.
 
-## Enhancements & Fixes
+# Enhancements & Fixes
 
 - Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
 - No bootloops or data errors in testing on real device as of 2025‑07‑02.
 - Spoofing RMX3661 factory Android 15 Realme UI 6.0 fingerprint.
 
-## Known Issues
+# Known Issues
 
 No issues have been reported so far, but if any problems arise, please report them in the official thread on XDA or create a GitHub issue with a detailed description of the situation and attach screenshots or videos from the detectors.
 
-## Changelog
+# Changelog
 
 All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately in the [CHANGELOG.md](CHANGELOG.md).
 
-### v2.0.0
+## v2.0.0
 
-#### Added
+### Added
 
 - Support for Realme: 9 Pro 5G / 9 5G / Q5 (codename "oscar") in addition to Realme 10 Pro 5G (codename "luigi").
 
-#### Fixed
+### Fixed
 
 - IMEI number now displays correctly (fixed IMEI showing as 0 by switching to KSUN `v1.0.8` tag from feature `Next`).
 - Resolved 5G network and general connectivity issues.
 - Fixed `Makefile` configuration issues in the build due to spoofing fingerprint.
 
-### v1.0.0
+## v1.0.0
 
-#### Added
+### Added
 
 - Included the [Yuri Keybox](https://github.com/dpejoh/yurikey/releases/) suggestion to enable passing Google Play Strong Integrity checks (with latest Play Services and Vending).
 
-#### Changed
+### Changed
 
 - Updated build fingerprint to final release identifier ("Luna").
 
-#### Fixed
+### Fixed
 
 - Bypassed native detection in system apps by injecting into the Zygote process using kprobes (now passes Native Detector v7.20 checks).
 - Fixed various device tree configuration issues in the build.
 
-## Data Insights for Tech Enthusiasts
+# Data Insights for Tech Enthusiasts
 
 The development of this kernel modification was primarily driven by Google's ongoing attempts to block rooted devices via Play Integrity API checks - an action that we, as developers and researchers, strongly oppose. Root access is essential for thorough security research, and its restriction undermines transparency and the right to repair. This custom kernel was carefully crafted to bypass these limitations, integrating KernelSU and SuSFS into an older 5.4 LineageOS kernel.
 
@@ -131,7 +131,7 @@ These kernel modifications are part of an academic project related to my master'
 
 **Note:** `.orig` and `.rej` files are intentionally preserved within the repository as references. They document the manual interventions required when automatic patching failed - particularly valuable for other developers wrestling with similarly aged Chinese kernels (such as those based on QGKI) on Realme and Oppo devices.
 
-## Credits & Resources
+# Credits & Resources
 
 - KernelSU & KernelSU Next.
 - SuSFS, susfs4ksu, and Wild Kernels.
