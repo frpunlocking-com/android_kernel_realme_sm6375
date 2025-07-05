@@ -56,7 +56,7 @@ fastboot flash vendor_boot vendor_boot.img
 fastboot reboot recovery
 ```
 
-After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (preffered) or factory fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases), you have 2 methods to flash kernel by `adb sideload` or `fastboot flash`.
+After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (preffered) or factory fastboot and flash [latest files](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases), you have 2 methods to flash kernel by `adb sideload` or `fastboot flash`.
 
 1. Method by AnyKernel package is recommended
 
