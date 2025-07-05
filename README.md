@@ -60,13 +60,13 @@ After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (p
 
 1. Method by AnyKernel package is recommended
 
-  a. In LineageOS recovery go to `adb sideload` on 10 Pro (luigi family):
+  - In LineageOS recovery go to `adb sideload` on 10 Pro (luigi family):
 
 ```
 adb sideload 2.0.0_KernelSUNext_SuSFS_AnyKernel_luigi_LineageOS_22.2.zip
 ```
 
-  b. Method by `adb sideload` in LineageOS recovery of AnyKernel package in 9 Pro / 9 5G / Q5 (oscar family):
+  - Method by `adb sideload` in LineageOS recovery of AnyKernel package in 9 Pro / 9 5G / Q5 (oscar family):
 
 ```
 adb sideload 2.0.0_KernelSUNext_SuSFS_AnyKernel_oscar_LineageOS_22.2.zip
