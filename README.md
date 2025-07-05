@@ -137,28 +137,13 @@ These kernel modifications are part of an academic project related to my master'
 - SuSFS, susfs4ksu, and Wild Kernels.
 - Big thanks to the Realme 10 Pro device maintainers and devs on LineageOS, testers, and the MindTheGapps maintainers and devs.
 
-```
+# Warranty & Liability Disclaimer
 
-#include <std_disclaimer.h>
-/*
-* Your warranty is... Still valid??
-*
-* I am not responsible if you brick your device,
-* dead SD card, installed viruses, burned battery
-* and thermonuclear war, or you getting fired
-* because the alarm app failed. Please do
-* some research if you have any concerns
-* about features included in this software
-* before flashing it! You are choosing to
-* make these strong modifications on your
-* device, and if you point the finger at me
-* for messing up your device,
-* I will laugh at you.
-* LICENSE.md
-* Our modifications are GPLv2 licensed.
-*/
+Are you device owner and... your warranty is still valif?
 
-```
+I am not responsible if you brick your device, kill your SD card, install viruses, burn the battery, trigger thermonuclear war, or lose your job because the alarm app failed. Please research any features included in this software **before flashing it! You must be the rightful owner of the device you are modifying and have the legal right to alter its software.**. You are choosing to make these strong modifications on your device, and if you point the finger at me for messing up your device, I will laugh at you.
+
+This software is distributed under the **GNU General Public License v2 (GPL-2.0)**. See `LICENSE.md` for full terms.
 
 # How do I submit patches to Android Common Kernels
 
