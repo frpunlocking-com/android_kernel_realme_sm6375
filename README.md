@@ -56,7 +56,9 @@ fastboot flash vendor_boot vendor_boot.img
 fastboot reboot recovery
 ```
 
-After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (preffered) or factory fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases) by:
+After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (preffered) or factory fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases), you have 2 methods to flash kernel by `adb sideload` or `fastboot flash`.
+
+1. Method by fastboot:
 
 ```
 fastboot flash boot_a boot.img
@@ -64,6 +66,18 @@ fastboot flash dtbo_a dtbo.img
 fastboot flash boot_b boot.img 
 fastboot flash dtbo_b dtbo.img
 fastboot reboot
+```
+
+2. Method by AnyKernel package in LineageOS recovery 10 Pro (luigi family):
+
+```
+adb sideload 2.0.0_KernelSUNext_SuSFS_AnyKernel_luigi_LineageOS_22.2.zip
+```
+
+Method by adb sideload in 9 Pro / 9 5G / Q5 (oscar family):
+
+```
+adb sideload 2.0.0_KernelSUNext_SuSFS_AnyKernel_oscar_LineageOS_22.2.zip
 ```
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip). Confirmed safe for dirty flash on 2025-06-14 to 2025‑06‑28 build, no data loss observed. Works seamlessly with MindTheGapps.
