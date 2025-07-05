@@ -72,7 +72,7 @@ adb sideload 2.0.0_KernelSUNext_SuSFS_AnyKernel_luigi_LineageOS_22.2.zip
 adb sideload 2.0.0_KernelSUNext_SuSFS_AnyKernel_oscar_LineageOS_22.2.zip
 ```
 
-3. Method by fastboot:
+2. Method by fastboot:
 
 ```
 fastboot flash boot_a boot.img
