@@ -94,7 +94,7 @@ fastboot flash dtbo_b dtbo.img
 fastboot reboot
 ```
 
-3. Alternative method by [Kernel Flasher](https://github.com/capntrips/KernelFlasher) when you are rooted with AnyKernel3 Zip or partition boot.img & dtbo.img for your family.
+3. Alternative method by [Kernel Flasher](https://github.com/capntrips/KernelFlasher) when you are rooted with AnyKernel3 Zip or partition images for your family.
 
 After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip). Confirmed safe for dirty flash on 2025-06-14 to 2025‑06‑28 build, no data loss observed. Works seamlessly with MindTheGapps.
 
