@@ -61,7 +61,7 @@ Tested on 10 Pro (luigi):
 - [lineage-22.2-20250705-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250705/lineage-22.2-20250705-nightly-luigi-signed.zip)
 
 
-If you don't have LineageOS [recovery luigi](https://mirrorbits.lineageos.org/full/luigi/20250628/vendor_boot.img) or [recovery oscar](https://mirrorbits.lineageos.org/full/oscar/20250630/vendor_boot.img), flash it by:
+If you don't have LineageOS [recovery luigi](https://mirrorbits.lineageos.org/full/luigi/20250705/vendor_boot.img) or [recovery oscar](https://mirrorbits.lineageos.org/full/oscar/20250707/vendor_boot.img), flash it by:
 
 ```
 fastboot flash vendor_boot vendor_boot.img
