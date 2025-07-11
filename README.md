@@ -58,6 +58,8 @@ Tested on 10 Pro (luigi):
 - [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
 - [lineage-22.2-20250628-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250628/lineage-22.2-20250628-nightly-luigi-signed.zip)
+- [lineage-22.2-20250705-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250705/lineage-22.2-20250705-nightly-luigi-signed.zip)
+
 
 If you don't have LineageOS [recovery luigi](https://mirrorbits.lineageos.org/full/luigi/20250628/vendor_boot.img) or [recovery oscar](https://mirrorbits.lineageos.org/full/oscar/20250630/vendor_boot.img), flash it by:
 
@@ -105,7 +107,7 @@ After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](htt
 ## Enhancements & Fixes
 
 - Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
-- No bootloops or data errors in testing on real device as of 2025‑07‑02.
+- No bootloops or data errors in testing on real device as of 2025‑07‑11.
 - Spoofing RMX3661 factory Android 15 Realme UI 6.0 fingerprint.
 
 ## Known Issues
