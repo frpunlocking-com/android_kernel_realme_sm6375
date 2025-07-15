@@ -1,20 +1,49 @@
 # Realme 10 Pro LineageOS KSUN + SuSFS kernel with spoofing
 
-- KSUN Nightly is root solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
+- KSUN Nightly is root solution with hiding by SuSFS.
 - All features, except OverlaysFS Auto Kstat Support on SuSFS, proceed into an invisible root experience for all apps, including Revolut, bank, ChatGPT, goverment apps etc.
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
 - Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
-Device:
+## Supported devices
+
+### Realme 10 Pro
 
 - codename: luigi
-- IDs: 
+- SoC: sm6375, Snapdragon 695
+- IDs:
   - RMX3660,
   - RMX3661,
   - RMX3663.
 
+On v2.x.x newest release based on KSUN v1.0.8 branch.
+
+### Realme 9 Pro
+
+- codename: oscar
+- SoC: sm6375, Snapdragon 695
+- IDs:
+  - RMX3471,
+  - RMX3472.
+
+On v2.x.x newest release based on KSUN v1.0.8 branch.
+
+They work with boot images (v2) for oscar
+
+### Realme 9 5G
+
+- SoC: sm6375, Snapdragon 695
+- codename: oscar
+- IDs: RMX3474.
+
+### Realme Q5
+
+- SoC: sm6375, Snapdragon 695
+- codename: oscar
+- IDs: RMX3478.
+
 <img style="width:400px; max-width:100%;" src="Realme 10 Pro 9 Pro 9 5G Q5 KernelSU Next 12797 v1.0.9 with SuSFS v1.5.5.png"
-     alt="Realme 10 Pro 9 Pro 9 5G Q5 KernelSU KSUN Next 12797 v1.0.9 with SuSFS v1.5.5">
+     alt="Realme 10 Pro 9 Pro 9 5G Q5 KernelSU KSUN Next 12797 v1.0.9 with SuSFS v1.5.5 kernel for LineageOS">
 
 ## Installation Steps
 
@@ -23,40 +52,59 @@ Tested with:
 - [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
 - [lineage-22.2-20250628-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250628/lineage-22.2-20250628-nightly-luigi-signed.zip)
+- [lineage-22.2-20250705-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250705/lineage-22.2-20250705-nightly-luigi-signed.zip)
 
-If you don't have [LineageOS recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img), flash it by:
+If you don't have [LineageOS recovery for luigi](https://mirrorbits.lineageos.org/full/luigi/20250705/vendor_boot.img) or [recovery for oscar](https://mirrorbits.lineageos.org/full/oscar/20250707/vendor_boot.img), flash it by:
 
 ```
 fastboot flash vendor_boot vendor_boot.img
+
 fastboot reboot recovery
 ```
 
-After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (preffered) or factory fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases) by:
+After flashing LineageOS and/or MindTheGApps, boot into LOS recovery (preffered) or fastboot and flash latest files attached at bottom of post. You have 3 methods to flash kernel by adb sideload of AnyKernel package or fastboot flash of boot images or flash on rooted Android by Kernel Flasher.
+
+1. Method by AnyKernel package is recommended from 2.0.0
+
+In LineageOS recovery go to adb sideload on 10 Pro (on luigi family):
+
+```
+adb sideload 2.0_luigi_AnyKernel3_LOS_22.2_Realme_10-Pro.zip
+```
+
+Method by sideload in LineageOS recovery of AnyKernel package in 9 Pro / 9 5G / Q5 (on oscar family):
+```
+adb sideload 2.0_oscar_AnyKernel3_LOS_22.2_Realme_9-Pro_9-5G_Q5.zip
+```
+
+2. Alternative method by fastboot for your family:
 
 ```
 fastboot flash boot_a boot.img
+
 fastboot flash dtbo_a dtbo.img
-fastboot flash boot_b boot.img 
+
+fastboot flash boot_b boot.img
+
 fastboot flash dtbo_b dtbo.img
+
 fastboot reboot
 ```
 
-After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip).
+3. Alternative method by Kernel Flasher when you are rooted with AK3 Zip or partition images for your family.
 
-Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
-
-Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img) (via Fastboot boot partition reflash).
+After the device boots, install Kernel SU Next Manager Nightly v1.0.9 (Latest). Confirmed safe for dirty flash from 2025‑06‑14 to 2025-06-28 builds on luigi, no data loss observed with dirty flash LineageOS from 14 to 28 (by adb sideload of zip).
 
 ## Kernel Highlights
 
 - Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
-- KernelSU v12716 - latest version providing root access.
+- KernelSU 12797 v1.0.9 - latest version providing root access.
 - SuSFS v1.5.5 - Android dynamic rootfs support.
 
 ## Enhancements & Fixes
 
 - Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
-- No bootloops or data errors in testing on real device as of 2025‑06‑21.
+- No bootloops or data errors in testing on real device as of 2025‑07‑16.
 - Spoofing RMX3661 factory Android 15 Realme UI 6.0 fingerprint.
 
 ## Known Issues
@@ -85,30 +133,17 @@ These kernel modifications are part of an academic project related to my master'
 - SuSFS, susfs4ksu, and Wild Kernels.
 - Big thanks to the Realme 10 Pro device maintainers and devs on LineageOS, testers, and the MindTheGapps maintainers and devs.
 
-```
+## Warranty & Liability Disclaimer  
 
-#include <std_disclaimer.h>
-/*
-* Your warranty is... Still valid??
-*
-* I am not responsible if you brick your device,
-* dead SD card, installed viruses, burned battery
-* and thermonuclear war, or you getting fired
-* because the alarm app failed. Please do
-* some research if you have any concerns
-* about features included in this software
-* before flashing it! You are choosing to
-* make these strong modifications on your
-* device, and if you point the finger at me
-* for messing up your device,
-* I will laugh at you.
-* LICENSE.md
-* Our modifications are GPLv2 licensed.
-*/
+I am not responsible if you brick your device, erase data, kill your SD card, install malware, burn the battery, trigger thermonuclear war, or get fired because an alarm app failed.  
+**You must be the rightful owner of the device you are modifying and have the legal right to alter its software.**  
 
-```
+All guides, binaries, and source code are provided **“AS IS,” without any express or implied warranty.** You apply them at your own risk. If you blame me for messing up your device, I will laugh at you.  
+For the full terms, see our **[Legal Notice](https://frpunlocking.com/legal)**.
 
-# How do I submit patches to Android Common Kernels
+This software is distributed under the **GNU General Public License v2 (GPL-2.0)**, modifications licensed by [Pawel Potacki](potacki.com). See `LICENSE.md` for full terms.
+
+## How do I submit patches to Android Common Kernels
 
 1. BEST: Make all of your changes to upstream Linux. If appropriate, backport to the stable releases.
    These patches will be merged automatically in the corresponding common kernels. If the patch is already
@@ -119,7 +154,7 @@ These kernel modifications are part of an academic project related to my master'
    coordinated with kernel-team@android.com. If you want to proceed, post a patch that conforms to the
    patch requirements below.
 
-# Common Kernel patch requirements
+## Common Kernel patch requirements
 
 - All patches must conform to the Linux kernel coding standards and pass `script/checkpatch.pl`
 - Patches shall not break gki_defconfig or allmodconfig builds for arm, arm64, x86, x86_64 architectures
@@ -132,7 +167,7 @@ These kernel modifications are part of an academic project related to my master'
 
 Additional requirements are listed below based on patch type
 
-## Requirements for backports from mainline Linux: `UPSTREAM:`, `BACKPORT:`
+### Requirements for backports from mainline Linux: `UPSTREAM:`, `BACKPORT:`
 
 - If the patch is a cherry-pick from Linux mainline with no changes at all
     - tag the patch subject with `UPSTREAM:`.
@@ -179,7 +214,7 @@ instead of `UPSTREAM:`.
         Signed-off-by: Joe Smith <joe.smith@foo.org>
 ```
 
-## Requirements for other backports: `FROMGIT:`, `FROMLIST:`,
+### Requirements for other backports: `FROMGIT:`, `FROMLIST:`,
 
 - If the patch has been merged into an upstream maintainer tree, but has not yet
 been merged into Linux mainline
@@ -230,7 +265,7 @@ must be a stable maintainer branch (not rebased, so don't use `linux-next` for e
         Signed-off-by: Joe Smith <joe.smith@foo.org>
 ```
 
-## Requirements for Android-specific patches: `ANDROID:`
+### Requirements for Android-specific patches: `ANDROID:`
 
 - If the patch is fixing a bug to Android-specific code
     - tag the patch subject with `ANDROID:`
@@ -250,8 +285,8 @@ must be a stable maintainer branch (not rebased, so don't use `linux-next` for e
     - tag the patch subject with `ANDROID:`
     - add a `Bug:` tag with the Android bug (required for android-specific features)
 
-# Vibrator driver for HHG device
-## How to merge the driver into kernel source tree
+## Vibrator driver for HHG device
+### How to merge the driver into kernel source tree
 
  1. Copy \${this_project}/drivers/hid/hid-aksys.c into \${your_kernel_root}/drivers/hid/
 
