@@ -89,7 +89,7 @@ fastboot reboot
 
 3. Alternative method by Kernel Flasher when you are rooted with AK3 Zip or partition images for your family.
 
-After the device boots, install Kernel SU Next Manager Nightly v1.0.9 (Latest). Confirmed safe for dirty flash from 2025‑06‑14 to 2025-06-28 builds on luigi, no data loss observed with dirty flash LineageOS from 14 to 28 (by adb sideload of zip).
+After the device boots, install Kernel SU Next Manager Nightly v1.0.9 (Latest). Confirmed safe for dirty flash from 2025‑06‑14 to 2025-06-28 builds on luigi, no data loss observed with dirty flash LineageOS from 14 to 05 (by adb sideload of zip).
 
 ## Kernel Highlights
 
