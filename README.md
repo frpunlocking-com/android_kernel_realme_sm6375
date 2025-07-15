@@ -1,90 +1,34 @@
-# Realme sm6375 (10 Pro / 9 Pro / 9 5G / Q5) kernel from LineageOS added KSUN + SuSFS with factory spoofing
+# Realme 10 Pro LineageOS KSUN + SuSFS kernel with spoofing
 
-- Fork of kernel for sm6375 from LineageOS with added KSUN Nightly which is root solution and hiding by SuSFS with spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
+- KSUN Nightly is root solution with hiding by SuSFS and spoofing as real device real device RMX3661 model with Realme UI 6.0 (Android 15) matching 1:1.
 - All features, except OverlaysFS Auto Kstat Support on SuSFS, proceed into an invisible root experience for all apps, including Revolut, bank, ChatGPT, goverment apps etc.
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
-- Not working Pixelify files (use a LSPosed module for unlimited GPhotos backup).
+- Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
 
-## Warranty & Liability Disclaimer  
+Device:
 
-I am not responsible if you brick your device, erase data, kill your SD card, install malware, burn the battery, trigger thermonuclear war, or get fired because an alarm app failed.  
-**You must be the rightful owner of the device you are modifying and have the legal right to alter its software.**  
+- codename: luigi
+- IDs: 
+  - RMX3660,
+  - RMX3661,
+  - RMX3663.
 
-All guides, binaries, and source code are provided **“AS IS,” without any express or implied warranty.** You apply them at your own risk. If you blame me for messing up your device, I will laugh at you.  
-For the full terms, see our **[Legal Notice](https://frpunlocking.com/legal)**.
+## Installation Steps
 
-This software is distributed under the **GNU General Public License v2 (GPL-2.0)**, modifications licensed by [Pawel Potacki](potacki.com). See `LICENSE.md` for full terms.
-
-## Supported devices with LineageOS 22.2
-
-- Realme 10 Pro​
-  - SoC: sm6375, Snapdragon 695
-  - codename: luigi
-  - IDs:
-    - RMX3660,
-    - RMX3661,
-    - RMX3663.
-  - On v2 newest release based on KernelSU Next `v1.0.8` tag.
-
-- Realme 9 Pro​
-  - SoC: sm6375, Snapdragon 695
-  - codename: oscar
-  - IDs:
-    - RMX3471,
-    - RMX3472.
-  - On v2 newest release based on KernelSU Next `v1.0.8` tag.
-
-### Possible supported devices 
-
-**Note:** They can work with boot images (in v2)
-
-- Realme 9 5G
-  - SoC: sm6375, Snapdragon 695
-  - codename: oscar
-  - IDs:
-    - RMX3474.
-  - Needs testers, please write [post in XDA](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/) if it is working in any way.     
- 
-- Realme Q5
-  - SoC: sm6375, Snapdragon 695
-  - codename: oscar
-    - IDs: RMX3478.
-  - Needs testers, please also write [post in XDA](https://xdaforums.com/t/kernel-unofficial-ksun-next-susfs-realme-10-pro-lineageos-22-2-with-spoofing-realme-ui-6-0-stable-5-4-292-qgki-frpunlocking-15-0.4745580/) if it is working in any way.     
-
-## Installation Steps for luigi/oscar
-
-Tested on 10 Pro (luigi):
+Tested with:
 
 - [lineage-22.2-20250614-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250614/lineage-22.2-20250614-nightly-luigi-signed.zip) 
 - [lineage-22.2-20250621-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250621/lineage-22.2-20250621-nightly-luigi-signed.zip)
 - [lineage-22.2-20250628-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250628/lineage-22.2-20250628-nightly-luigi-signed.zip)
-- [lineage-22.2-20250705-nightly-luigi-signed.zip](https://mirrorbits.lineageos.org/full/luigi/20250705/lineage-22.2-20250705-nightly-luigi-signed.zip)
 
-
-If you don't have LineageOS [recovery luigi](https://mirrorbits.lineageos.org/full/luigi/20250705/vendor_boot.img) or [recovery oscar](https://mirrorbits.lineageos.org/full/oscar/20250707/vendor_boot.img), flash it by:
+If you don't have [LineageOS recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img), flash it by:
 
 ```
 fastboot flash vendor_boot vendor_boot.img
 fastboot reboot recovery
 ```
 
-After flashing LineageOS and/or MindTheGApps, boot into LOS recovery or fastboot and flash [latest files](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases), because you have 3 methods to flash kernel by `adb sideload` AnyKernel3 or `fastboot flash` images or flash on rooted phone by [Kernel Flasher](https://github.com/capntrips/KernelFlasher).
-
-1. Method by AnyKernel package is recommended
-
-  - In LineageOS recovery go to `adb sideload` on 10 Pro (luigi family):
-
-```
-adb sideload 2.0_luigi_AnyKernel3_LOS_22.2_Realme_10-Pro.zip
-```
-
-  - Method by `adb sideload` in LineageOS recovery of AnyKernel package in 9 Pro / 9 5G / Q5 (oscar family):
-
-```
-adb sideload 2.0_oscar_AnyKernel3_LOS_22.2_Realme_9-Pro_9-5G_Q5.zip
-```
-
-2. Alternative method by fastboot:
+After flashing LineageOS and/or MindTheGApps, boot into LOS recovery fastboot (preffered) or factory fastboot and flash [latest boot and dtbo images](https://github.com/frpunlocking-com/android_kernel_realme_sm6375/releases) by:
 
 ```
 fastboot flash boot_a boot.img
@@ -94,56 +38,27 @@ fastboot flash dtbo_b dtbo.img
 fastboot reboot
 ```
 
-3. Alternative method by [Kernel Flasher](https://github.com/capntrips/KernelFlasher) when you are rooted with AnyKernel3 or partition images for your family.
+After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip).
 
-After device boots, install [Kernel SU Next Manager v1.0.8 (Latest Nightly)](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager-ci/next/Manager.zip). Confirmed safe for dirty flash on 2025-06-14 to 2025‑06‑28 build, no data loss observed. Works seamlessly with MindTheGapps.
+Confirmed safe for dirty flash on 2025‑06‑21 build, no data loss observed.
+
+Works seamlessly with MindTheGapps in [recovery](https://mirrorbits.lineageos.org/full/luigi/20250614/vendor_boot.img) (via Fastboot boot partition reflash).
 
 ## Kernel Highlights
 
 - Built on Linux 5.4.292-qgki from LineageOS - includes upstream Android GKI compliance patches.
-- KernelSU Next - latest version providing root access.
+- KernelSU v12716 - latest version providing root access.
 - SuSFS v1.5.5 - Android dynamic rootfs support.
 
 ## Enhancements & Fixes
 
 - Seamless GKI‑based kernel integration for the real Realme 10 Pro device built from scratch.
-- No bootloops or data errors in testing on real device as of 2025‑07‑11.
+- No bootloops or data errors in testing on real device as of 2025‑06‑21.
 - Spoofing RMX3661 factory Android 15 Realme UI 6.0 fingerprint.
 
 ## Known Issues
 
 No issues have been reported so far, but if any problems arise, please report them in the official thread on XDA or create a GitHub issue with a detailed description of the situation and attach screenshots or videos from the detectors.
-
-## Changelog
-
-All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately in the [CHANGELOG.md](CHANGELOG.md).
-
-### v2.0.0
-
-#### Added
-
-- Support for Realme: 9 Pro 5G / 9 5G / Q5 (codename "oscar") in addition to Realme 10 Pro 5G (codename "luigi").
-
-#### Fixed
-
-- IMEI number now displays correctly (fixed IMEI showing as 0 by switching to KSUN `v1.0.8` tag from feature `Next`).
-- Resolved 5G network and general connectivity issues.
-- Fixed `Makefile` configuration issues in the build due to spoofing fingerprint.
-
-### v1.0.0
-
-#### Added
-
-- Included the [Yuri Keybox](https://github.com/dpejoh/yurikey/releases/) suggestion to enable passing Google Play Strong Integrity checks (with latest Play Services and Vending).
-
-#### Changed
-
-- Updated build fingerprint to final release identifier ("Luna").
-
-#### Fixed
-
-- Bypassed native detection in system apps by injecting into the Zygote process using kprobes (now passes Native Detector v7.20 checks).
-- Fixed various device tree configuration issues in the build.
 
 ## Data Insights for Tech Enthusiasts
 
@@ -167,7 +82,30 @@ These kernel modifications are part of an academic project related to my master'
 - SuSFS, susfs4ksu, and Wild Kernels.
 - Big thanks to the Realme 10 Pro device maintainers and devs on LineageOS, testers, and the MindTheGapps maintainers and devs.
 
-## How do I submit patches to Android Common Kernels
+```
+
+#include <std_disclaimer.h>
+/*
+* Your warranty is... Still valid??
+*
+* I am not responsible if you brick your device,
+* dead SD card, installed viruses, burned battery
+* and thermonuclear war, or you getting fired
+* because the alarm app failed. Please do
+* some research if you have any concerns
+* about features included in this software
+* before flashing it! You are choosing to
+* make these strong modifications on your
+* device, and if you point the finger at me
+* for messing up your device,
+* I will laugh at you.
+* LICENSE.md
+* Our modifications are GPLv2 licensed.
+*/
+
+```
+
+# How do I submit patches to Android Common Kernels
 
 1. BEST: Make all of your changes to upstream Linux. If appropriate, backport to the stable releases.
    These patches will be merged automatically in the corresponding common kernels. If the patch is already
@@ -178,7 +116,7 @@ These kernel modifications are part of an academic project related to my master'
    coordinated with kernel-team@android.com. If you want to proceed, post a patch that conforms to the
    patch requirements below.
 
-## Common Kernel patch requirements
+# Common Kernel patch requirements
 
 - All patches must conform to the Linux kernel coding standards and pass `script/checkpatch.pl`
 - Patches shall not break gki_defconfig or allmodconfig builds for arm, arm64, x86, x86_64 architectures
@@ -191,7 +129,7 @@ These kernel modifications are part of an academic project related to my master'
 
 Additional requirements are listed below based on patch type
 
-### Requirements for backports from mainline Linux: `UPSTREAM:`, `BACKPORT:`
+## Requirements for backports from mainline Linux: `UPSTREAM:`, `BACKPORT:`
 
 - If the patch is a cherry-pick from Linux mainline with no changes at all
     - tag the patch subject with `UPSTREAM:`.
@@ -238,7 +176,7 @@ instead of `UPSTREAM:`.
         Signed-off-by: Joe Smith <joe.smith@foo.org>
 ```
 
-### Requirements for other backports: `FROMGIT:`, `FROMLIST:`,
+## Requirements for other backports: `FROMGIT:`, `FROMLIST:`,
 
 - If the patch has been merged into an upstream maintainer tree, but has not yet
 been merged into Linux mainline
@@ -289,7 +227,7 @@ must be a stable maintainer branch (not rebased, so don't use `linux-next` for e
         Signed-off-by: Joe Smith <joe.smith@foo.org>
 ```
 
-### Requirements for Android-specific patches: `ANDROID:`
+## Requirements for Android-specific patches: `ANDROID:`
 
 - If the patch is fixing a bug to Android-specific code
     - tag the patch subject with `ANDROID:`
@@ -309,8 +247,8 @@ must be a stable maintainer branch (not rebased, so don't use `linux-next` for e
     - tag the patch subject with `ANDROID:`
     - add a `Bug:` tag with the Android bug (required for android-specific features)
 
-## Vibrator driver for HHG device
-### How to merge the driver into kernel source tree
+# Vibrator driver for HHG device
+## How to merge the driver into kernel source tree
 
  1. Copy \${this_project}/drivers/hid/hid-aksys.c into \${your_kernel_root}/drivers/hid/
 
