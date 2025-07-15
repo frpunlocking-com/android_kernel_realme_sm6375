@@ -65,12 +65,12 @@ After flashing LineageOS and/or MindTheGApps, boot into LOS recovery (preffered)
 In LineageOS recovery go to adb sideload on 10 Pro (on luigi family):
 
 ```
-adb sideload 2.0_luigi_AnyKernel3_LOS_22.2_Realme_10-Pro.zip
+adb sideload 3.0_luigi_AnyKernel3_LOS_22.2_Realme_10-Pro.zip
 ```
 
 Method by sideload in LineageOS recovery of AnyKernel package in 9 Pro / 9 5G / Q5 (on oscar family):
 ```
-adb sideload 2.0_oscar_AnyKernel3_LOS_22.2_Realme_9-Pro_9-5G_Q5.zip
+adb sideload 3.0_oscar_AnyKernel3_LOS_22.2_Realme_9-Pro_9-5G_Q5.zip
 ```
 
 2. Alternative method by fastboot for your family:
