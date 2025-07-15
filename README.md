@@ -7,6 +7,8 @@
 
 ## Supported devices
 
+On v3.x.x newest release based on KSUN v1.0.9 branch.
+
 ### Realme 10 Pro
 
 - codename: luigi
@@ -16,8 +18,6 @@
   - RMX3661,
   - RMX3663.
 
-On v2.x.x newest release based on KSUN v1.0.8 branch.
-
 ### Realme 9 Pro
 
 - codename: oscar
@@ -25,10 +25,6 @@ On v2.x.x newest release based on KSUN v1.0.8 branch.
 - IDs:
   - RMX3471,
   - RMX3472.
-
-On v2.x.x newest release based on KSUN v1.0.8 branch.
-
-They work with boot images (v2) for oscar
 
 ### Realme 9 5G
 
