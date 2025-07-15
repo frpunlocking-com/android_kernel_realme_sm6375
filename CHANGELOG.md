@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented in this file. Note: Pre-release versions (Alpha and Beta builds prior to v1.0.0) are marked as pre-release on GitHub and listed separately below.
 
+## v3.0.0
+
+### Added
+- Merged KernelSU‑Next v1.0.9 root‑management updates.
+
+### Changed
+- Disabled Realme UI bootloader fingerprint spoofing; devices now report their true build fingerprint.  
+- Now Yuri Keybox support for hardware‑backed Google Play Integrity (Strong) attestation.
+
+### Fixed
+- Resolved Luna FRP “farm fingerprint” mismatch error.  
+- Devices now pass SafetyNet/Play Integrity checks on Luigi & Oscar families.
+
 ## v2.0.0
 
 ### Added
