@@ -3,7 +3,7 @@
 - KSUN Nightly is root solution with hiding by SuSFS.
 - All features, except OverlaysFS Auto Kstat Support on SuSFS, proceed into an invisible root experience for all apps, including Revolut, bank, ChatGPT, goverment apps etc.
 - Custom-modified boot, dtbo, kernel images, and source code on every release.
-- Unmounting Pixelify files (use a LSPosed module for unlimited GPhotos backup).
+- Unmounting Pixelify files (use a LSPosed module or ReVanced App for unlimited GPhotos backup).
 
 ## Supported devices
 
