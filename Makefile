@@ -1,8 +1,9 @@
 # SPDX-License-Identifier: GPL-2.0
 VERSION = 5
 PATCHLEVEL = 4
-SUBLEVEL = 254 #spoffing of Realme RMX3661, real is .292
-EXTRAVERSION = "qgki-gc916795b189b"
+SUBLEVEL = 292
+EXTRAVERSION = -gki
+NAME = Kleptomaniac Octopus
 
 # indicate that change "Kbuild: Support nested composite objects" is
 # present in the kernel so that out-of-tree modules can act upon it
@@ -343,9 +344,8 @@ else # !mixed-build
 include scripts/Kbuild.include
 
 # Read KERNELRELEASE from include/config/kernel.release (if it exists)
-
-KERNELRELEASE := 5.4.254-qgki-gc916795b189b
-KERNELVERSION := 5.4.254
+KERNELRELEASE = $(shell cat include/config/kernel.release 2> /dev/null)
+KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(SUBLEVEL)))$(EXTRAVERSION)
 export VERSION PATCHLEVEL SUBLEVEL KERNELRELEASE KERNELVERSION
 
 include scripts/subarch.include
@@ -1179,8 +1179,7 @@ export INSTALL_DTBS_PATH ?= $(INSTALL_PATH)/dtbs/$(KERNELRELEASE)
 
 MODLIB	= $(INSTALL_MOD_PATH)/lib/modules/$(KERNELRELEASE)
 export MODLIB
-INS_MOD := $(INSTALL_MOD_PATH)
-export INS_MOD
+
 #ifdef OPLUS_FEATURE_CHG_BASIC
 KBUILD_CFLAGS += -DOPLUS_FEATURE_CHG_BASIC
 #endif
@@ -1590,23 +1589,13 @@ _modinst_:
 	@sed 's:^:kernel/:' modules.builtin > $(MODLIB)/modules.builtin
 	@cp -f $(objtree)/modules.builtin.modinfo $(MODLIB)/
 	$(Q)$(MAKE) -f $(srctree)/scripts/Makefile.modinst
-# Ensure directories exist
-	@mkdir -p "$(INS_MOD)/../depmod_vendor_intermediates/lib/modules/0.0"
-	@mkdir -p "$(INS_MOD)/../depmod_vendor_ramdisk_intermediates/lib/modules/0.0"
-# Copy all files from versioned directory to /0.0/ (force overwrite)
-		@cp -a "$(INS_MOD)/lib/modules/$(KERNELRELEASE)/." "$(INS_MOD)/lib/modules/$(KERNELVERSION)/"
-# Copy ALL module metadata files (using find to handle spaces)
-	@find "$(INS_MOD)/lib/modules/$(KERNELRELEASE)/" -maxdepth 1 -type f -name 'modules.*' \
-		-exec cp -t "$(INS_MOD)/../depmod_vendor_intermediates/lib/modules/0.0/" {} +
-	@find "$(INS_MOD)/lib/modules/$(KERNELRELEASE)/" -maxdepth 1 -type f -name 'modules.*' \
-		-exec cp -t "$(INS_MOD)/../depmod_vendor_ramdisk_intermediates/lib/modules/0.0/" {} +
 
 # This depmod is only for convenience to give the initial
 # boot a modules.dep even before / is mounted read-write.  However the
 # boot script depmod is the master version.
 PHONY += _modinst_post
 _modinst_post: _modinst_
-	$(call cmd,depmod -b "$(INS_MOD)" -C /dev/null -e -F "$(INS_MOD)/lib/modules/$(KERNELRELEASE)/System.map" -E "$(INS_MOD)/lib/modules/$(KERNELRELEASE)/modules.order" "$(KERNELRELEASE)")
+	$(call cmd,depmod)
 
 ifeq ($(CONFIG_MODULE_SIG), y)
 PHONY += modules_sign

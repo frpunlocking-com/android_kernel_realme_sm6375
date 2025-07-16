@@ -1,6 +1,16 @@
 --- fs/proc/fd.c
 +++ fs/proc/fd.c
-@@ -27,6 +30,9 @@ static int seq_show(struct seq_file *m, void *v)
+@@ -13,6 +13,9 @@
+ #include <linux/fs.h>
+ 
+ #include <linux/proc_fs.h>
++#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
++#include <linux/susfs_def.h>
++#endif
+ 
+ #include "../mount.h"
+ #include "internal.h"
+@@ -24,6 +27,9 @@ static int seq_show(struct seq_file *m, void *v)
  	int f_flags = 0, ret = -ENOENT;
  	struct file *file = NULL;
  	struct task_struct *task;
@@ -10,7 +20,7 @@
  
  	task = get_proc_task(m->private);
  	if (!task)
-@@ -57,10 +63,48 @@ static int seq_show(struct seq_file *m, void *v)
+@@ -54,10 +60,48 @@ static int seq_show(struct seq_file *m, void *v)
  	if (ret)
  		return ret;
  

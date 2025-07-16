@@ -25,35 +25,33 @@ fi
 # Do not expand names
 set -f
 
+# Fix the language to get consistent output
+LC_ALL=C
+export LC_ALL
 
 if [ -z "$KBUILD_BUILD_VERSION" ]; then
 	VERSION=$(cat .version 2>/dev/null || echo 1)
 else
 	VERSION=$KBUILD_BUILD_VERSION
 fi
-VERSION=1
- # ── Spoofed build metadata: exact values ─────────────────────────────
-TIMESTAMP="Fri Apr 18 11:04:11 CST 2025"
- LINUX_COMPILE_BY="root"
- LINUX_COMPILE_HOST="kvm-slave-build-s-vendor-04946496"
 
- # Always SMP PREEMPT, no initcall_debug here
- PREEMPT=CONFIG_FLAGS="SMP PREEMPT"
-
- # Android tag (if you need it, else leave blank)
- LINUX_COMPILER=ANDROID_INFO="(Android (6877366 based on r383902b1) "
-
- # Compiler versions
- CC_VERSION="clang version 11.0.2 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79)"
- LD_VERSION="LLD 11.0.2 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79)"
-
-
-
-# append real-time preempt if requested
-if [ -n "$PREEMPT_RT" ] ; then
-  CONFIG_FLAGS="$CONFIG_FLAGS PREEMPT_RT"
+if [ -z "$KBUILD_BUILD_TIMESTAMP" ]; then
+	TIMESTAMP=`date`
+else
+	TIMESTAMP=$KBUILD_BUILD_TIMESTAMP
 fi
-UTS_VERSION="$UTS_VERSION $CONFIG_FLAGS $TIMESTAMP"
+
+LINUX_COMPILE_BY=frpunlocking
+
+LINUX_COMPILE_HOST=frpunlocking-builder
+
+
+UTS_VERSION="#1 SMP PREEMPT Fri Jul 11 12:13:17 UTC 2025";
+CONFIG_FLAGS=""
+if [ -n "$SMP" ] ; then CONFIG_FLAGS="SMP"; fi
+if [ -n "$PREEMPT" ] ; then CONFIG_FLAGS="$CONFIG_FLAGS PREEMPT"; fi
+if [ -n "$PREEMPT_RT" ] ; then CONFIG_FLAGS="$CONFIG_FLAGS PREEMPT_RT"; fi
+UTS_VERSION="#1 SMP PREEMPT Fri Jul 11 12:13:17 UTC 2025";
 
 # Truncate to maximum length
 
@@ -62,15 +60,45 @@ UTS_TRUNCATE="cut -b -$UTS_LEN"
 
 # Generate a temporary compile.h
 
-{
-  echo "/* This file is auto generated, version $VERSION */"
-  if [ -n "$CONFIG_FLAGS" ]; then
-    echo "/* $CONFIG_FLAGS */"
-  fi
-echo "#define UTS_MACHINE \"arm64\"";
-echo "#define UTS_VERSION \"#1 SMP PREEMPT Fri Apr 18 11:04:11 CST 2025\"";
-echo "#define LINUX_COMPILE_BY \"root\"";
-echo "#define LINUX_COMPILE_HOST \"kvm-slave-build-s-vendor-04946496\"";
-echo "#define LINUX_COMPILER \"(Android (6877366 based on r383902b1) clang version 11.0.2 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79), LLD 11.0.2 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79))\"";
+{ echo /\* This file is auto generated, version $VERSION \*/
+  if [ -n "$CONFIG_FLAGS" ] ; then echo "/* $CONFIG_FLAGS */"; fi
+
+  echo \#define UTS_MACHINE \"$ARCH\"
+
+  echo \#define UTS_VERSION \"`echo $UTS_VERSION`\"
+
+  echo \#define LINUX_COMPILE_BY \"`echo $LINUX_COMPILE_BY | $UTS_TRUNCATE`\"
+  echo \#define LINUX_COMPILE_HOST \"`echo $LINUX_COMPILE_HOST | $UTS_TRUNCATE`\"
+
+  LD_VERSION=$($LD -v | head -n1 | sed 's/(compatible with [^)]*)//' \
+		      | sed 's/[[:space:]]*$//')
+  printf '#define LINUX_COMPILER "%s"\n' "$CC_VERSION, $LD_VERSION"
 } > .tmpcompile
-mv -f .tmpcompile $TARGET
+
+# Only replace the real compile.h if the new one is different,
+# in order to preserve the timestamp and avoid unnecessary
+# recompilations.
+# We don't consider the file changed if only the date/time changed,
+# unless KBUILD_BUILD_TIMESTAMP was explicitly set (e.g. for
+# reproducible builds with that value referring to a commit timestamp).
+# A kernel config change will increase the generation number, thus
+# causing compile.h to be updated (including date/time) due to the
+# changed comment in the
+# first line.
+
+if [ -z "$KBUILD_BUILD_TIMESTAMP" ]; then
+   IGNORE_PATTERN="UTS_VERSION"
+else
+   IGNORE_PATTERN="NOT_A_PATTERN_TO_BE_MATCHED"
+fi
+
+if [ -r $TARGET ] && \
+      grep -v $IGNORE_PATTERN $TARGET > .tmpver.1 && \
+      grep -v $IGNORE_PATTERN .tmpcompile > .tmpver.2 && \
+      cmp -s .tmpver.1 .tmpver.2; then
+   rm -f .tmpcompile
+else
+   vecho "  UPD     $TARGET"
+   mv -f .tmpcompile $TARGET
+fi
+rm -f .tmpver.1 .tmpver.2
